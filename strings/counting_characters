@@ -1,0 +1,37 @@
+// You are using GCC
+#include<stdio.h>
+//this library include character handling functions
+#include<ctype.h>
+
+int main(){
+    char str[151]; 
+    int i;
+    int vowels=0,consonants=0,special=0,digits=0;
+    scanf("%s",str);  //taking input of string
+    
+    //FOR READING THROUGH THE STRING
+    for(i=0; str[i] !='\0';i++){
+        if(isalpha(str[i])){
+            //ALL CHARACTERS LOWERED TO COUNT VOWELS EASILY
+            char ch=tolower(str[i]);
+            if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+                vowels++;
+            }
+            else {
+                consonants++;
+            }
+        }
+        else if (isdigit(str[i])){
+            digits++;
+        }
+        else {
+            special++;
+        }
+    }
+    printf("Vowels: %d\n",vowels);
+    printf("Consonants: %d\n",consonants);
+    printf("Digits: %d\n",digits);
+    printf("Special Characters: %d\n",special);
+    
+    
+}
