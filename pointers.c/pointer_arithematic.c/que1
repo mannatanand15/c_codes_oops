@@ -1,0 +1,27 @@
+/* Dev wants to write a program for a school project that takes an integer input and calculates the sum of its odd digits using pointer arithmetic. 
+﻿Help him by writing the code.
+Input format :
+The input consists of an integer n.
+Output format :
+The output displays an integer representing the sum of the odd digits of n.
+*/
+#include<stdio.h>
+int main(){
+    int n;
+    int sum=0;  //initialsing the value
+    //assigning pointer to sum
+    int *ptr=&sum;
+    scanf("%d",&n);
+    //SEPARATING EACH AND EVERY DIGIT OF NUMBER
+    int digit;
+    while(n>0){
+        digit=n%10;
+        // odd condition 
+        if(digit % 2 !=0){
+            //this means it is odd
+            *ptr=*ptr+digit;
+        }
+        n=n/10;
+    }
+    printf("%d",sum);
+}
